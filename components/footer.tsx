@@ -49,14 +49,16 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 text-primary" />
                 <p className="font-sans text-sm text-muted-foreground">
-                  Amsterdam, Buenos Aires
+                  Av. Manuel Belgrano 2582 L. 5, T4000 San Miguel de Tucumán, Tucumán
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 text-primary" />
-                <p className="font-sans text-sm text-muted-foreground">
-                  +54 9 11 0000-0000
-                </p>
+                <div className="space-y-1">
+                  <p className="font-sans text-sm text-muted-foreground">Lucho: 3813031559</p>
+                  <p className="font-sans text-sm text-muted-foreground">Rama: 3815711323</p>
+                  <p className="font-sans text-sm text-muted-foreground">Agustina: 3814489414</p>
+                </div>
               </div>
             </div>
           </div>

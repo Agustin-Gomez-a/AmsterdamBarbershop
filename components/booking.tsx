@@ -16,7 +16,7 @@ const timeSlots = [
   "19:00",
 ]
 
-const barbers = ["Lucas", "Martin", "Diego"]
+const barbers = ["Lucho", "Rama", "Agustina"]
 
 const days = [
   { label: "Lunes", short: "LUN" },
@@ -36,11 +36,16 @@ export function Booking() {
   const handleWhatsAppBooking = () => {
     if (!selectedTime || !selectedBarber || !selectedDay) return
 
+    const phones: Record<string, string> = {
+      Lucho: "5493813031559",
+      Rama: "5493815711323",
+      Agustina: "5493814489414",
+    }
+    const target = phones[selectedBarber] || "5493813031559"
     const message = encodeURIComponent(
       `Hola! Soy ${name || "cliente"}. Quiero reservar un turno para el ${selectedDay} a las ${selectedTime} con ${selectedBarber}. Gracias!`
     )
-    // Replace with actual WhatsApp number
-    window.open(`https://wa.me/5491100000000?text=${message}`, "_blank")
+    window.open(`https://wa.me/${target}?text=${message}`, "_blank")
   }
 
   const isComplete = selectedTime && selectedBarber && selectedDay
@@ -131,7 +136,7 @@ export function Booking() {
           <div>
             <label className="mb-3 flex items-center gap-2 font-sans text-xs font-medium tracking-[0.2em] text-muted-foreground">
               <User className="h-4 w-4 text-primary" />
-              PELUQUERO
+              PELUQUEROS
             </label>
             <div className="grid grid-cols-3 gap-3">
               {barbers.map((barber) => (

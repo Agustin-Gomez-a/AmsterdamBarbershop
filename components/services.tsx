@@ -3,35 +3,35 @@ import { Scissors, Sparkles, CircleDot, Clock } from "lucide-react"
 const services = [
   {
     icon: Scissors,
-    title: "Corte Clasico",
+    title: "Corte",
     description:
-      "Corte de pelo tradicional con acabado profesional. Incluye lavado y styling.",
-    price: "$5.000",
+      "Corte de pelo con acabado profesional. Incluye lavado y styling.",
+    price: "$9.000",
     duration: "30 min",
-  },
-  {
-    icon: Sparkles,
-    title: "Barba & Toalla Caliente",
-    description:
-      "Perfilado de barba premium con toalla caliente y productos de primera calidad.",
-    price: "$4.000",
-    duration: "25 min",
-  },
-  {
-    icon: CircleDot,
-    title: "Rapado / Fade",
-    description:
-      "Degradado moderno con maquina. Skin fade, mid fade o low fade a tu eleccion.",
-    price: "$5.500",
-    duration: "35 min",
   },
   {
     icon: Scissors,
     title: "Corte + Barba",
     description:
-      "Combo completo: corte de pelo a eleccion mas perfilado de barba con toalla caliente.",
-    price: "$8.000",
+      "Combo: corte a elección y perfilado de barba con toalla caliente.",
+    price: "$10.000",
     duration: "50 min",
+  },
+  {
+    icon: Sparkles,
+    title: "Barba",
+    description:
+      "Perfilado de barba premium con toalla caliente y productos de primera calidad.",
+    price: "$5.000",
+    duration: "25 min",
+  },
+  {
+    icon: CircleDot,
+    title: "Perfilado de Cejas",
+    description:
+      "Definición y perfilado de cejas para un look prolijo y natural.",
+    price: "$1.500",
+    duration: "10 min",
   },
 ]
 

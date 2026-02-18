@@ -1,11 +1,12 @@
 import Image from "next/image"
+import heroImg from "@/components/img/5 copa5.jpg"
 
 export function Hero() {
   return (
     <section id="inicio" className="relative flex min-h-screen items-center justify-center">
       {/* Background Image */}
       <Image
-        src="/images/hero.jpg"
+        src={heroImg}
         alt="Tu Estilo, Nuestra Pasion - Amsterdam BarberShop"
         fill
         className="object-cover"
@@ -39,9 +40,9 @@ export function Hero() {
         </div>
 
         <h1 className="font-serif text-5xl font-bold leading-tight tracking-wider text-foreground md:text-7xl lg:text-8xl">
-          <span className="text-balance">TU ESTILO,</span>
+          <span className="text-balance">DONDE EL CORTE,</span>
           <br />
-          <span className="text-primary">NUESTRA PASION</span>
+          <span className="text-primary">ES UN ARTE</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-xl font-sans text-base font-light leading-relaxed text-foreground/60 md:text-lg">
