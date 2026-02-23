@@ -3,6 +3,7 @@ import { Oswald, Roboto } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { LoadingOverlay } from '@/components/loading-overlay'
+import { Navbar } from '@/components/navbar'
 
 const _oswald = Oswald({
   subsets: ['latin'],
@@ -41,6 +42,7 @@ export default function RootLayout({
     <html lang="es" className={`${_oswald.variable} ${_roboto.variable}`}>
       <body className="font-sans antialiased">
         <LoadingOverlay />
+        <Navbar />
         <div
           id="app-content"
           className="opacity-0 translate-y-2 transition-all duration-500"

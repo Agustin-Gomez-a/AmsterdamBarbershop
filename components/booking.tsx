@@ -21,10 +21,10 @@ const barbers = ["Lucho", "Rama", "Agustina"]
 const days = [
   { label: "Lunes", short: "LUN" },
   { label: "Martes", short: "MAR" },
-  { label: "Miercoles", short: "MIE" },
+  { label: "Miércoles", short: "MIÉ" },
   { label: "Jueves", short: "JUE" },
   { label: "Viernes", short: "VIE" },
-  { label: "Sabado", short: "SAB" },
+  { label: "Sábado", short: "SÁB" },
 ]
 
 export function Booking() {
@@ -66,7 +66,7 @@ export function Booking() {
             AGENDA TU VISITA
           </h2>
           <p className="mx-auto mt-4 max-w-lg font-sans text-sm font-light leading-relaxed text-muted-foreground">
-            Lunes a Sabados de 10:00 a 20:00 hs. Selecciona dia, horario y peluquero.
+            Lunes a Sábados de 10:00 a 20:00 hs. Seleccioná día, horario y peluquero.
           </p>
         </div>
 
@@ -90,18 +90,17 @@ export function Booking() {
           <div>
             <label className="mb-3 flex items-center gap-2 font-sans text-xs font-medium tracking-[0.2em] text-muted-foreground">
               <Calendar className="h-4 w-4 text-primary" />
-              DIA
+              DÍA
             </label>
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
               {days.map((day) => (
                 <button
                   key={day.label}
                   onClick={() => setSelectedDay(day.label)}
-                  className={`rounded-sm border px-3 py-3 font-serif text-xs font-medium tracking-wider transition-all ${
-                    selectedDay === day.label
+                  className={`rounded-sm border px-3 py-3 font-serif text-xs font-medium tracking-wider transition-all ${selectedDay === day.label
                       ? "border-primary bg-primary text-primary-foreground"
                       : "border-border bg-background text-muted-foreground hover:border-primary/50 hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   {day.short}
                 </button>
@@ -120,11 +119,10 @@ export function Booking() {
                 <button
                   key={time}
                   onClick={() => setSelectedTime(time)}
-                  className={`rounded-sm border px-2 py-3 font-sans text-xs font-medium transition-all ${
-                    selectedTime === time
+                  className={`rounded-sm border px-2 py-3 font-sans text-xs font-medium transition-all ${selectedTime === time
                       ? "border-primary bg-primary text-primary-foreground"
                       : "border-border bg-background text-muted-foreground hover:border-primary/50 hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   {time}
                 </button>
@@ -143,11 +141,10 @@ export function Booking() {
                 <button
                   key={barber}
                   onClick={() => setSelectedBarber(barber)}
-                  className={`rounded-sm border px-4 py-4 font-serif text-sm font-medium tracking-wider transition-all ${
-                    selectedBarber === barber
+                  className={`rounded-sm border px-4 py-4 font-serif text-sm font-medium tracking-wider transition-all ${selectedBarber === barber
                       ? "border-primary bg-primary text-primary-foreground"
                       : "border-border bg-background text-muted-foreground hover:border-primary/50 hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   {barber}
                 </button>
@@ -173,15 +170,19 @@ export function Booking() {
           <button
             onClick={handleWhatsAppBooking}
             disabled={!isComplete}
-            className={`flex w-full items-center justify-center gap-3 rounded-sm py-4 font-serif text-sm font-semibold tracking-[0.2em] transition-all ${
-              isComplete
-                ? "bg-[#25D366] text-white hover:bg-[#20BD5A]"
-                : "cursor-not-allowed bg-muted text-muted-foreground"
-            }`}
+            className={`flex w-full items-center justify-center gap-3 rounded-sm py-4 font-serif text-sm font-semibold tracking-[0.2em] transition-all ${isComplete
+                ? "bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-lg shadow-emerald-900/30"
+                : "cursor-not-allowed bg-muted text-muted-foreground opacity-50"
+              }`}
           >
             <MessageCircle className="h-5 w-5" />
             CONFIRMAR RESERVA POR WHATSAPP
           </button>
+          {!isComplete && (
+            <p className="text-center font-sans text-xs text-muted-foreground">
+              Seleccioná día, horario y peluquero para confirmar tu reserva
+            </p>
+          )}
         </div>
       </div>
     </section>

@@ -26,8 +26,8 @@ export function Footer() {
               </div>
             </div>
             <p className="font-sans text-sm font-light leading-relaxed text-muted-foreground">
-              Donde la tradicion se encuentra con el estilo moderno.
-              Tu barberia de confianza desde 2025.
+              Donde la tradición se encuentra con el estilo moderno.
+              Tu barbería de confianza desde 2025.
             </p>
           </div>
 
@@ -40,7 +40,7 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 text-primary" />
                 <div>
-                  <p className="font-sans text-sm text-foreground">Lunes a Sabados</p>
+                  <p className="font-sans text-sm text-foreground">Lunes a Sábados</p>
                   <p className="font-sans text-sm text-muted-foreground">
                     10:00 - 20:00 hs
                   </p>
@@ -48,9 +48,14 @@ export function Footer() {
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 text-primary" />
-                <p className="font-sans text-sm text-muted-foreground">
-                  Av. Manuel Belgrano 2582 L. 5, T4000 San Miguel de Tucumán, Tucumán
-                </p>
+                <a
+                  href="https://www.google.com/maps/search/Av.+Belgrano+3598+Local+6+San+Miguel+de+Tucum%C3%A1n"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Av. Belgrano 3598 Local 6, San Miguel de Tucumán, Tucumán
+                </a>
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 text-primary" />
@@ -101,7 +106,7 @@ export function Footer() {
                   href="#galeria"
                   className="font-sans text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
-                  Galeria
+                  Galería
                 </a>
                 <a
                   href="#turnos"

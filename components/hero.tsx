@@ -1,20 +1,22 @@
 import Image from "next/image"
-import heroImg from "@/components/img/5 copa5.jpg"
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative flex min-h-screen items-center justify-center">
-      {/* Background Image */}
-      <Image
-        src={heroImg}
-        alt="Tu Estilo, Nuestra Pasion - Amsterdam BarberShop"
-        fill
-        className="object-cover"
-        priority
-        quality={90}
-      />
+    <section id="inicio" className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+        poster="/images/hero.jpg"
+      >
+        <source src="/video/video1.mp4" type="video/mp4" />
+      </video>
+
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-background/75" />
+      <div className="absolute inset-0 bg-background/65" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
@@ -34,7 +36,7 @@ export function Hero() {
         <div className="mx-auto mb-6 flex items-center justify-center gap-4">
           <span className="h-px w-12 bg-primary" />
           <span className="font-sans text-xs font-medium tracking-[0.3em] text-primary">
-            BARBERIA PREMIUM
+            BARBERÍA PREMIUM
           </span>
           <span className="h-px w-12 bg-primary" />
         </div>
@@ -46,7 +48,7 @@ export function Hero() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-xl font-sans text-base font-light leading-relaxed text-foreground/60 md:text-lg">
-          Donde la tradicion se encuentra con el estilo moderno.
+          Donde la tradición se encuentra con el estilo moderno.
           Experiencia premium en cada visita.
         </p>
 

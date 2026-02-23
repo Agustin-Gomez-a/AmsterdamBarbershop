@@ -5,7 +5,7 @@ const services = [
     icon: Scissors,
     title: "Corte",
     description:
-      "Corte de pelo con acabado profesional. Incluye lavado y styling.",
+      "Corte de pelo con acabado profesional. Incluye lavado y peinado.",
     price: "$9.000",
     duration: "30 min",
   },
@@ -49,10 +49,10 @@ export function Services() {
             <span className="h-px w-8 bg-primary" />
           </div>
           <h2 className="font-serif text-4xl font-bold tracking-wider text-foreground md:text-5xl">
-            QUE OFRECEMOS
+            QUÉ OFRECEMOS
           </h2>
           <p className="mx-auto mt-4 max-w-lg font-sans text-sm font-light leading-relaxed text-muted-foreground">
-            Servicios premium con los mejores productos y la atencion que te mereces
+            Servicios premium con los mejores productos y la atención que te merecés
           </p>
         </div>
 

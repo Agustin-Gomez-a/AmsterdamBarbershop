@@ -39,7 +39,7 @@ export function Team() {
           <div className="mb-4 flex items-center justify-center gap-4">
             <span className="h-px w-8 bg-primary" />
             <span className="font-sans text-xs font-medium tracking-[0.3em] text-primary">
-              CONOCENOS
+              CONOCÉNOS
             </span>
             <span className="h-px w-8 bg-primary" />
           </div>
@@ -47,7 +47,7 @@ export function Team() {
             NUESTRO EQUIPO
           </h2>
           <p className="mx-auto mt-4 max-w-lg font-sans text-sm font-light leading-relaxed text-muted-foreground">
-            Tres profesionales apasionados por su trabajo, listos para darte el mejor look.
+            Tres profesionales apasionados por su trabajo, listos para darte el mejor estilo.
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export function Team() {
                   src={barber.image}
                   alt={`${barber.name} - ${barber.role} en Amsterdam BarberShop`}
                   fill
-                  className="object-cover grayscale contrast-110 brightness-90 transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                  className="object-cover md:grayscale md:contrast-110 md:brightness-90 transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                   sizes="(max-width: 640px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />

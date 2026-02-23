@@ -3,7 +3,6 @@ import { useState } from "react"
 import Image, { type StaticImageData } from "next/image"
 import img5Copa6 from "@/components/img/5 copa6.jpg"
 import img5Copa7 from "@/components/img/5 copa7.jpg"
-import img5Copa8 from "@/components/img/5 copa8.jpg"
 import {
   Dialog,
   DialogContent,
@@ -17,26 +16,25 @@ type GalleryItem = { src: string | StaticImageData; alt: string }
 const galleryImages: GalleryItem[] = [
   {
     src: "/images/gallery-1.jpg",
-    alt: "",
+    alt: "Corte fade clásico con degradado perfecto",
   },
   {
     src: "/images/gallery-2.jpg",
-    alt: "",
+    alt: "Corte texturizado con volumen natural",
   },
   {
     src: "/images/gallery-3.jpg",
-    alt: "",
+    alt: "Degradado limpio con línea definida",
   },
   {
     src: "/images/gallery-4.jpg",
-    alt: "",
+    alt: "Estilo moderno con acabado profesional",
   },
   {
     src: img5Copa6,
-    alt: "Buzz cut limpio",
+    alt: "Buzz cut limpio con degradado",
   },
   { src: img5Copa7, alt: "Detalle de navaja clásica" },
-  { src: img5Copa8, alt: "Texturizado moderno" },
 ]
 
 export function Gallery() {
@@ -54,10 +52,10 @@ export function Gallery() {
             <span className="h-px w-8 bg-primary" />
           </div>
           <h2 className="font-serif text-4xl font-bold tracking-wider text-foreground md:text-5xl">
-            GALERIA
+            GALERÍA
           </h2>
           <p className="mx-auto mt-4 max-w-lg font-sans text-sm font-light leading-relaxed text-muted-foreground">
-            Cada corte es una obra de arte. Mira nuestros trabajos mas recientes.
+            Cada corte es una obra de arte. Mirá nuestros trabajos más recientes.
           </p>
         </div>
 
