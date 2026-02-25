@@ -13,7 +13,8 @@ const services = [
     icon: Scissors,
     title: "Corte + Barba",
     description:
-      "Combo: corte a elección y perfilado de barba con toalla caliente.",
+      "Combo: corte a elección y perfilado de barba con toalla caliente."
+    ,
     price: "$10.000",
     duration: "50 min",
   },
