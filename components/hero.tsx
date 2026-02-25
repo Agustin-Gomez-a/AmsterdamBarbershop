@@ -1,15 +1,89 @@
+"use client"
+
 import Image from "next/image"
+import { useRef, useEffect, useCallback, useState } from "react"
 
 export function Hero() {
+  const video1Ref = useRef<HTMLVideoElement>(null)
+  const video2Ref = useRef<HTMLVideoElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const switchingRef = useRef(false)
+
+  const FADE_DURATION = 1.5 // seconds before end to start crossfade
+
+  const handleTimeUpdate = useCallback(
+    (videoRef: React.RefObject<HTMLVideoElement | null>, otherRef: React.RefObject<HTMLVideoElement | null>, isActive: boolean) => {
+      return () => {
+        const video = videoRef.current
+        const other = otherRef.current
+        if (!video || !other || !isActive || switchingRef.current) return
+
+        const remaining = video.duration - video.currentTime
+        if (remaining <= FADE_DURATION && video.duration > 0) {
+          switchingRef.current = true
+          // Prepare & play the other video from the start
+          other.currentTime = 0
+          other.play().then(() => {
+            setActiveIndex((prev) => (prev === 0 ? 1 : 0))
+            // After the fade completes, pause the old video
+            setTimeout(() => {
+              video.pause()
+              video.currentTime = 0
+              switchingRef.current = false
+            }, FADE_DURATION * 1000)
+          }).catch(() => {
+            switchingRef.current = false
+          })
+        }
+      }
+    },
+    []
+  )
+
+  useEffect(() => {
+    const v1 = video1Ref.current
+    const v2 = video2Ref.current
+    if (!v1 || !v2) return
+
+    const handler1 = handleTimeUpdate(video1Ref, video2Ref, activeIndex === 0)
+    const handler2 = handleTimeUpdate(video2Ref, video1Ref, activeIndex === 1)
+
+    v1.addEventListener("timeupdate", handler1)
+    v2.addEventListener("timeupdate", handler2)
+
+    return () => {
+      v1.removeEventListener("timeupdate", handler1)
+      v2.removeEventListener("timeupdate", handler2)
+    }
+  }, [activeIndex, handleTimeUpdate])
+
   return (
     <section id="inicio" className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      {/* Background Video */}
+      {/* Background Video A */}
       <video
+        ref={video1Ref}
         autoPlay
-        loop
         muted
         playsInline
         className="absolute inset-0 h-full w-full object-cover"
+        style={{
+          opacity: activeIndex === 0 ? 1 : 0,
+          transition: `opacity ${FADE_DURATION}s ease-in-out`,
+        }}
+      >
+        <source src="/video/video1.mp4" type="video/mp4" />
+      </video>
+
+      {/* Background Video B (clone for crossfade) */}
+      <video
+        ref={video2Ref}
+        muted
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{
+          opacity: activeIndex === 1 ? 1 : 0,
+          transition: `opacity ${FADE_DURATION}s ease-in-out`,
+        }}
       >
         <source src="/video/video1.mp4" type="video/mp4" />
       </video>
