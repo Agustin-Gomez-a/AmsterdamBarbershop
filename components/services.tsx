@@ -70,7 +70,7 @@ export function Services() {
               <p className="mb-6 font-sans text-sm font-light leading-relaxed text-muted-foreground">
                 {service.description}
               </p>
-              <div className="flex items-center justify-between border-t border-border pt-4">
+              <div className="flex items-center justify-center gap-4 border-t border-border pt-4">
                 <span className="font-serif text-xl font-bold text-primary">
                   {service.price}
                 </span>

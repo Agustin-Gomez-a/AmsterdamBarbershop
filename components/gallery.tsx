@@ -3,6 +3,7 @@ import { useState } from "react"
 import Image, { type StaticImageData } from "next/image"
 import img5Copa6 from "@/components/img/5 copa6.jpg"
 import img5Copa7 from "@/components/img/5 copa7.jpg"
+import imgGallery4 from "@/public/images/gallery-4.jpg"
 import {
   Dialog,
   DialogContent,
@@ -27,7 +28,7 @@ const galleryImages: GalleryItem[] = [
     alt: "Degradado limpio con línea definida",
   },
   {
-    src: "/images/gallery-4.jpg",
+    src: imgGallery4,
     alt: "Estilo moderno con acabado profesional",
   },
   {
